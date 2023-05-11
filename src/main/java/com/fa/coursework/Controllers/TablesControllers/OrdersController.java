@@ -87,6 +87,7 @@ public class OrdersController extends Controller {
             System.out.println("Задача уже выполненна");
             return;
         }
+
         String update = "UPDATE orders SET order_done_date = '" + new Date(System.currentTimeMillis())
                 + "' WHERE order_id = " + selectedOrder.getId();
         getDataBase().updateData(update);
