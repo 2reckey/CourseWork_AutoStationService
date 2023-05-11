@@ -51,7 +51,7 @@ public class CarsController extends Controller {
 
     @FXML
     void refreshData(ActionEvent event) {
-        ObservableList<Car> client_list = FXCollections.observableArrayList();
+        ObservableList<Car> car_list = FXCollections.observableArrayList();
 
         String select = "SELECT cars.*, clients.client_name " +
                 "FROM cars JOIN clients on cars.client_id=clients.client_id ";
@@ -66,12 +66,12 @@ public class CarsController extends Controller {
 
         try {
             ResultSet reSet = getDataBase().getReSet(select);
-            while (reSet.next()) client_list.add(new Car(reSet));
+            while (reSet.next()) car_list.add(new Car(reSet));
         } catch (Exception e) {
             System.out.println("Ошибка при получении данных");
         }
 
-        table.setItems(client_list);
+        table.setItems(car_list);
     }
 
     @FXML

@@ -45,9 +45,9 @@ public class ClientsController extends Controller {
 
     @FXML
     void refreshData(ActionEvent event) {
-        ObservableList<Client> client_list= FXCollections.observableArrayList();
+        ObservableList<Client> client_list = FXCollections.observableArrayList();
 
-        String select = "SELECT * FROM clients WHERE client_name LIKE '%"+nameSearch.getText().trim()+"%';";
+        String select = "SELECT * FROM clients WHERE client_name LIKE '%" + nameSearch.getText().trim() + "%';";
 
         try {
             ResultSet reSet = getDataBase().getReSet(select);

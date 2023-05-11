@@ -47,12 +47,12 @@ public class OrdersController extends Controller {
 
     @FXML
     void addNewOrder(ActionEvent event) throws IOException {
-        Const.ReplaceView(event,"AddView/AddOrderView.fxml",getDataBase());
+        Const.ReplaceView(event, "AddView/AddOrderView.fxml", getDataBase());
     }
 
     @FXML
     void refreshData(ActionEvent event) {
-        ObservableList<Order> client_list = FXCollections.observableArrayList();
+        ObservableList<Order> order_list = FXCollections.observableArrayList();
 
         String select = "SELECT orders.order_id, clients.client_name, cars.car_sign, " +
                 "employees.employee_name, services.service_name, orders.order_date, " +
@@ -63,12 +63,12 @@ public class OrdersController extends Controller {
 
         try {
             ResultSet reSet = getDataBase().getReSet(select);
-            while (reSet.next()) client_list.add(new Order(reSet));
+            while (reSet.next()) order_list.add(new Order(reSet));
         } catch (Exception e) {
             System.out.println("Ошибка при получении данных");
         }
 
-        table.setItems(client_list);
+        table.setItems(order_list);
     }
 
     @FXML
@@ -87,8 +87,8 @@ public class OrdersController extends Controller {
             System.out.println("Задача уже выполненна");
             return;
         }
-        String update = "UPDATE orders SET order_done_date = " + "NULL"
-                + " WHERE order_id = " + selectedOrder.getId();
+        String update = "UPDATE orders SET order_done_date = '" + new Date(System.currentTimeMillis())
+                + "' WHERE order_id = " + selectedOrder.getId();
         getDataBase().updateData(update);
 
         refreshData(null);

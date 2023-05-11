@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class AddEmployeeController extends Controller{
+public class AddEmployeeController extends Controller {
 
     @FXML
     private TextField email;
@@ -31,36 +31,36 @@ public class AddEmployeeController extends Controller{
 
     @FXML
     void AddNewEmployee(ActionEvent event) throws IOException {
-        String EmployeeName=name.getText().trim();
-        if (EmployeeName.equals("")){
+        String EmployeeName = name.getText().trim();
+        if (EmployeeName.equals("")) {
             System.out.println("Имя не указанно");
             return;
         }
-        String EmployeePosition=position.getText().trim();
-        if (EmployeePosition.equals("")){
+        String EmployeePosition = position.getText().trim();
+        if (EmployeePosition.equals("")) {
             System.out.println("Не указанна должность");
             return;
         }
-        String EmployeePhone=phone.getText().trim();
-        if (EmployeePhone.equals("")){
+        String EmployeePhone = phone.getText().trim();
+        if (EmployeePhone.equals("")) {
             System.out.println("Не указан номер мобильного телефона");
             return;
         }
-        String EmployeeEmail=email.getText().trim();
-        if (EmployeeEmail.equals("")){
+        String EmployeeEmail = email.getText().trim();
+        if (EmployeeEmail.equals("")) {
             System.out.println("Не указан адресс электронной почты");
             return;
         }
-        String EmployeeAddress=address.getText().trim();
-        if (EmployeeAddress.equals("")){
+        String EmployeeAddress = address.getText().trim();
+        if (EmployeeAddress.equals("")) {
             System.out.println("Не указан адрес проживания");
             return;
         }
 
         String update = "INSERT INTO employees (employee_name, employee_position, " +
                 "employee_phone, employee_email, employee_address)" +
-                " VALUES ('"+EmployeeName+"', '"+EmployeePosition+"', '"+
-                EmployeePhone+"', '"+EmployeeEmail+"', '"+EmployeeAddress+"');";
+                " VALUES ('" + EmployeeName + "', '" + EmployeePosition + "', '" +
+                EmployeePhone + "', '" + EmployeeEmail + "', '" + EmployeeAddress + "');";
 
         getDataBase().updateData(update);
 
@@ -73,7 +73,7 @@ public class AddEmployeeController extends Controller{
     }
 
     @Override
-    public void start(){
+    public void start() {
         loginLAB.setText(getDataBase().USER_LOGIN);
     }
 

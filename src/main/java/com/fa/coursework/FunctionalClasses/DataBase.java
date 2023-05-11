@@ -21,8 +21,8 @@ public class DataBase extends Const {
         String select = "SELECT * FROM users WHERE user_login = ? AND user_hashpass = ?;";
         PreparedStatement PrSt = getPrSt(select);
         try {
-            PrSt.setString(1,login);
-            PrSt.setInt(2,hashPassword);
+            PrSt.setString(1, login);
+            PrSt.setInt(2, hashPassword);
             ResultSet reSet = PrSt.executeQuery();
 
             return reSet.next();
@@ -32,7 +32,7 @@ public class DataBase extends Const {
         }
     }
 
-    public ResultSet getReSet(String select){
+    public ResultSet getReSet(String select) {
         try {
             Statement statement = connection.createStatement();
             return statement.executeQuery(select);
@@ -42,7 +42,7 @@ public class DataBase extends Const {
         }
     }
 
-    public void updateData(String update){
+    public void updateData(String update) {
         try {
             Statement statement = connection.createStatement();
             statement.executeUpdate(update);
@@ -51,9 +51,9 @@ public class DataBase extends Const {
         }
     }
 
-    public PreparedStatement getPrSt(String select){
+    public PreparedStatement getPrSt(String select) {
         try {
-            PreparedStatement PrSt =connection.prepareStatement(select);
+            PreparedStatement PrSt = connection.prepareStatement(select);
             return PrSt;
         } catch (SQLException e) {
             System.out.println("Ошибка получения результатов из базы данных");

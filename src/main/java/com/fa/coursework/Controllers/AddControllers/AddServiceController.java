@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class AddServiceController extends Controller{
+public class AddServiceController extends Controller {
 
     @FXML
     private TextField price;
@@ -25,25 +25,26 @@ public class AddServiceController extends Controller{
 
     @FXML
     void AddNewService(ActionEvent event) throws IOException {
-        String ServiceName=name.getText().trim();
-        if (ServiceName.equals("")){
+        String ServiceName = name.getText().trim();
+        if (ServiceName.equals("")) {
             System.out.println("Не указано название");
             return;
         }
-        String ServiceDescription=description.getText().trim();
-        if (ServiceDescription.equals("")){
+        String ServiceDescription = description.getText().trim();
+        if (ServiceDescription.equals("")) {
             System.out.println("Не выбранно описание");
             return;
         }
+
         int ServicePrice;
         try {
-            ServicePrice=Integer.parseInt(price.getText());
-        }catch (Exception e){
+            ServicePrice = Integer.parseInt(price.getText());
+        } catch (Exception e) {
             System.out.println("Неверно указанна цена");
             return;
         }
         String update = "INSERT INTO services (service_name, service_description, service_price)" +
-                " VALUES ('"+ServiceName+"', '"+ServiceDescription+"', "+ServicePrice+");";
+                " VALUES ('" + ServiceName + "', '" + ServiceDescription + "', " + ServicePrice + ");";
         getDataBase().updateData(update);
 
         toHome(event);
@@ -55,7 +56,7 @@ public class AddServiceController extends Controller{
     }
 
     @Override
-    public void start(){
+    public void start() {
         loginLAB.setText(getDataBase().USER_LOGIN);
     }
 

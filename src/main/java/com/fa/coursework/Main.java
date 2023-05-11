@@ -18,7 +18,7 @@ public class Main extends Application {
         stage.setTitle("123");
         stage.setScene(scene);
         stage.setResizable(false);
-        Controller controller =loader.getController();
+        Controller controller = loader.getController();
         controller.start();
         stage.show();
 

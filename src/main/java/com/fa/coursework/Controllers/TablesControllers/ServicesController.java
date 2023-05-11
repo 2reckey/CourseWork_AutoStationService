@@ -42,7 +42,7 @@ public class ServicesController extends Controller {
 
     @FXML
     void refreshData(ActionEvent event) {
-        ObservableList<Service> service_list= FXCollections.observableArrayList();
+        ObservableList<Service> service_list = FXCollections.observableArrayList();
 
         String select = "SELECT * FROM services;";
 
