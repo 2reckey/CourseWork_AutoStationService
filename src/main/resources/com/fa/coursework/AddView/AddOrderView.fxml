@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="400" maxWidth="700" minHeight="400" minWidth="700" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #003;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fa.coursework.Controllers.AddControllers.AddOrderController">
+    <children>
+        <Label layoutX="6.0" layoutY="-13.0" style="-fx-font-size: 62;" stylesheets="@../style.css" text="Автосервис">
+            <font>
+                <Font name="Century" size="27.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.6052631735801697" green="0.6052631735801697" blue="0.6052631735801697" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+        <Label fx:id="loginLAB" alignment="CENTER" layoutX="523.0" layoutY="15.0" prefHeight="25.0" prefWidth="177.0" text="login: 2reckey" textFill="WHITE" textOverrun="CLIP">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <AnchorPane layoutX="-3.0" layoutY="67.0" prefHeight="18.0" prefWidth="707.0" style="-fx-background-color: linear-gradient(from 39.8104% 50.237% to 100.0% 51.1848%, #ffffff 0.0%, #ffffff 0.6711%, #00000065 100.0%)linear-gradient(from 39.8104% 50.237% to 100.0% 51.1848%, #ffffff 0.0%, #ffffff 0.6711%, #00000065 100.0%);" />
+        <Button layoutX="408.0" layoutY="15.0" mnemonicParsing="false" onAction="#toHome" prefHeight="34.0" prefWidth="132.0" style="-fx-background-color: #fff; -fx-background-radius: 10;" text="Домой">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Button>
+        <Label layoutX="6.0" layoutY="93.0" style="-fx-font-size: 40;" stylesheets="@../style.css" text="Новый заказ">
+            <font>
+                <Font name="Century" size="27.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="0.4691943127962085" startY="0.4786729857819906">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.6000000238418579" green="0.6000000238418579" blue="0.6000000238418579" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.22483221476510057">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.768047143558684">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.6052631735801697" green="0.6052631735801697" blue="0.6052631735801697" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+        <Button layoutX="476.0" layoutY="101.0" mnemonicParsing="false" onAction="#AddNewOrder" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 10;" text="Добавить заказ">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Button>
+        <TableView fx:id="carTable" layoutX="54.0" layoutY="216.0" prefHeight="126.0" prefWidth="171.0" style="-fx-background-color: linear-gradient(from 52.1327% 100.0% to 52.1327% 13.2701%, #ffffff80 0.0%, #ffffff 100.0%);">
+            <columns>
+                <TableColumn fx:id="carSign" prefWidth="176.0" text="ГРЗ" />
+            </columns>
+        </TableView>
+        <TextField fx:id="signCarSearch" alignment="CENTER" layoutX="54.0" layoutY="174.0" onAction="#refreshCarData" prefHeight="35.0" prefWidth="171.0" promptText="Поиск по ГРЗ">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <Label layoutX="81.0" layoutY="136.0" prefHeight="41.0" prefWidth="132.0" style="-fx-font-size: 20;" stylesheets="@../style.css" text="Автомобиль">
+            <font>
+                <Font name="Century" size="20.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="0.4691943127962085" startY="0.4786729857819906">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.6000000238418579" green="0.6000000238418579" blue="0.6000000238418579" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.06375838926174487">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.9358323784580127">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.6052631735801697" green="0.6052631735801697" blue="0.6052631735801697" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+        <Button layoutX="54.0" layoutY="352.0" mnemonicParsing="false" onAction="#toAddNewCar" prefHeight="35.0" prefWidth="171.0" style="-fx-background-color: #fff; -fx-background-radius: 10;" text="Добавить машину">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="System Italic" size="14.0" />
+            </font>
+        </Button>
+      <TableView fx:id="employeeTable" layoutX="265.0" layoutY="216.0" prefHeight="126.0" prefWidth="171.0" style="-fx-background-color: linear-gradient(from 52.1327% 100.0% to 52.1327% 13.2701%, #ffffff80 0.0%, #ffffff 100.0%);">
+         <columns>
+            <TableColumn fx:id="employeeName" prefWidth="176.0" text="Имя сотрудника" />
+         </columns>
+      </TableView>
+      <TextField fx:id="nameEmployeeSearch" alignment="CENTER" layoutX="265.0" layoutY="174.0" onAction="#refreshEmployeeData" prefHeight="35.0" prefWidth="171.0" promptText="Поиск по имени">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="294.0" layoutY="136.0" prefHeight="41.0" prefWidth="114.0" style="-fx-font-size: 20;" stylesheets="@../style.css" text="Сотрудник">
+         <font>
+            <Font name="Century" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.4691943127962085" startY="0.4786729857819906">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.6000000238418579" green="0.6000000238418579" blue="0.6000000238418579" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.06375838926174487">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9358323784580127">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6052631735801697" green="0.6052631735801697" blue="0.6052631735801697" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button layoutX="265.0" layoutY="352.0" mnemonicParsing="false" onAction="#toAddNewEmployee" prefHeight="35.0" prefWidth="171.0" style="-fx-background-color: #fff; -fx-background-radius: 10;" text="Добавить сотрудника">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="ServiceTable" layoutX="476.0" layoutY="216.0" prefHeight="126.0" prefWidth="177.0" style="-fx-background-color: linear-gradient(from 52.1327% 100.0% to 52.1327% 13.2701%, #ffffff80 0.0%, #ffffff 100.0%);">
+         <columns>
+            <TableColumn fx:id="serviceName" prefWidth="176.0" text="Название услуги" />
+         </columns>
+      </TableView>
+      <TextField fx:id="nameServiceSearch" alignment="CENTER" layoutX="479.0" layoutY="174.0" onAction="#refreshServiceData" prefHeight="35.0" prefWidth="171.0" promptText="Поиск по названию">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="528.0" layoutY="136.0" prefHeight="41.0" prefWidth="75.0" style="-fx-font-size: 20;" stylesheets="@../style.css" text="Услуга">
+         <font>
+            <Font name="Century" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.4691943127962085" startY="0.4786729857819906">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.6000000238418579" green="0.6000000238418579" blue="0.6000000238418579" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.06375838926174487">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9358323784580127">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6052631735801697" green="0.6052631735801697" blue="0.6052631735801697" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button layoutX="480.0" layoutY="352.0" mnemonicParsing="false" onAction="#toAddNewService" prefHeight="35.0" prefWidth="171.0" style="-fx-background-color: #fff; -fx-background-radius: 10;" text="Добавить услугу">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Button>
+        <Button layoutX="302.0" layoutY="101.0" mnemonicParsing="false" onAction="#refreshAllData" prefHeight="35.0" prefWidth="156.0" style="-fx-background-color: #fff; -fx-background-radius: 10;" text="Обновить">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="System Italic" size="16.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
