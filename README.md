@@ -15,4 +15,7 @@
 
 ---
 - **Логин:** *qwerty*
-- **Пароль:** *qwerty* 
+- **Пароль:** *qwerty*
+  
+---
+![Графический Интерфейс](https://github.com/2reckey/CourseWork_AutoStationService/assets/114042872/7121883a-728f-48e4-b47d-42033a831b36)
